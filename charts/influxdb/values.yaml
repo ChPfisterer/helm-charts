@@ -2,7 +2,7 @@
 ## ref: https://hub.docker.com/r/library/influxdb/tags/
 image:
   repository: "influxdb"
-  tag: "1.8.0-alpine"
+  tag: "1.8.2"
   pullPolicy: IfNotPresent
   ## If specified, use these secrets to access the images
   # pullSecrets:
@@ -45,14 +45,14 @@ startupProbe:
 service:
   ## Add annotations to service
   # annotations: {}
-  type: ClusterIP
+  type: NodePort
   # externalIPs: []
   # externalTrafficPolicy: ""
 
 ## Persist data to a persistent volume
 ##
 persistence:
-  enabled: true
+  enabled: false
   ## A manually managed Persistent Volume and Claim
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
